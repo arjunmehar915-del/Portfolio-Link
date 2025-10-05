@@ -1,0 +1,1454 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: black;
+    color:#e7e7e7 ;
+    min-height: 100vh;
+    line-height: 1.5;
+    
+}
+
+/* gradient and layer blur effect */
+
+.image-gradient{
+    position: absolute;
+    top: 50px;
+    right: 0;
+    opacity: 0.01;
+    z-index: -1;
+}
+
+.layer-blur{
+    height: 0;
+    width: 30rem;
+    position: absolute;
+    top: 20%;
+    right: 0;
+    box-shadow: 0 0 700px 15px white;
+    rotate: -30deg;
+    z-index: -1;
+}
+
+/* container */
+
+.container{
+    width: 100%;
+    top: 0;
+    margin: 0 auto;
+    padding-bottom: 5rem;
+    padding: 0 2rem;
+    position: relative;
+    overflow: hidden;
+
+}
+
+/* header */
+
+header{
+   display: flex;
+   top: 0;
+   margin-bottom: 3rem;
+   justify-content: space-between;
+   align-items: center;
+    padding: 1rem 4rem;
+    
+}
+
+header h1{
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 400;
+
+}
+
+nav{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-left: -5%;
+}
+
+nav a{
+    font-size: 1rem;
+    letter-spacing: 0.1rem;
+    transition: color 0.2s ease;
+    text-decoration: none;
+    color: inherit;
+    z-index: 999;
+}
+
+nav a:hover{
+    text-decoration: none;
+    color: #a7a7a7;
+}
+
+/* .btn-signing{
+    background-color: #a7a7a7;
+    color: black;
+    padding: 0.8rem 2rem;
+    border-radius: 50px;
+    border: none;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: background-color 0.2s ease;
+    cursor: pointer;
+    z-index: 999;
+} */
+
+/* .btn-signing:hover{
+    background-color: white;
+} */
+
+/* Mian content */
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: calc(90vh - 6rem);
+
+}
+
+.content{
+    
+    max-width: 40rem;
+    margin-left: 10%;
+    z-index: 999;
+
+}
+
+.tag-box{
+    position: relative;
+    width: 18rem;
+    height: 2.5rem;
+    border-radius: 50px;
+    background: linear-gradient(to right,#656565,#7f42a7,#6600c5,#5500a0,#757575,#656565);
+    background-size: 200%;
+    animation: anmationGradient 2.5s linear infinite;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+}
+
+@keyframes animationGradient {
+    to{
+        background-position: 200%;
+    }
+}
+
+.tag-box .tag{
+    position: absolute;
+    inset: 3px 3px 3px 3px;
+    background-color: black;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.5s ease;
+}
+
+.tag:hover{
+    transform: scale(1.1);
+}
+.tag-box .tag:hover{
+    color: #5300a0;
+    transform: scale(1.1);
+
+}
+
+.content h1{
+    font-size: 4rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    margin: 2rem 0;
+    line-height: 1.2;
+    text-shadow: 0 0 10px rgba(128, 128, 128, 0.418);
+
+}
+
+
+.description{
+    font-size: 1.2rem;
+    letter-spacing: 0.05em;
+    max-width: 35rem;
+    color: gray;
+
+}
+
+.buttons{
+    display: flex;
+    gap: 1rem;
+    margin-top: 3rem;
+
+}
+
+.btn-get-started{
+    text-decoration: none;
+    border: 1px solid rgba(128, 128, 128, 0.6);
+    color: #e8ffff;
+    padding: 0.7rem 1.2rem;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    transition: background-color 0.2s
+    ease;
+}
+
+.btn-get-started:hover{
+    text-decoration: none;
+    transform: scale(1.05);
+    background-color: #1a1a1a;
+    color: #5300a0;;
+}
+
+.btn-signing-main{
+    text-decoration: none;
+    background-color: lightgray;
+    color: black;
+    padding: 0.6rem 2.5rem;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    transition: background-color 0.2s ease;
+}
+.btn-signing-main:hover{
+    text-decoration: none;
+    transform: scale(1.05);
+    background-color: gray;
+}
+
+/* robot */
+.robot-3d{
+    position: absolute;
+    top: 0;
+    right: -30%;
+    scale: 1.2;
+    z-index: 10 ;
+   
+    
+}
+
+
+/* --- Media Queries --- */
+
+/* For smaller desktops and large tablets (e.g., up to 1200px wide) */
+@media (max-width: 1200px) {
+    header {
+        padding: 1rem 2rem; /* Reduce header padding */
+    }
+
+    .robot-3d {
+        right: -35%; /* Move robot a bit more to the right to give content space */
+        scale: 1.1; /* Slightly smaller robot */
+    }
+
+    .content {
+        margin-left: 5%; /* Adjust content margin */
+        max-width: 38rem; /* Slightly narrower content block */
+    }
+
+    .content h1 {
+        font-size: 3.5rem; /* Smaller main heading */
+    }
+
+    .description {
+        font-size: 1.1rem; /* Smaller description text */
+        max-width: 32rem;
+    }
+
+    .buttons {
+        margin-top: 2.5rem; /* Reduce button margin */
+    }
+}
+
+/* For medium tablets (e.g., up to 992px wide) */
+@media (max-width: 992px) {
+    header {
+        padding: 1rem 1.5rem;
+    }
+
+    header h1.logo {
+        font-size: 1.8rem; /* Smaller logo */
+    }
+
+    nav {
+        gap: 1.5rem; /* Reduce nav item gap */
+        margin-left: -2%; /* Adjust nav margin */
+    }
+
+    nav a {
+        font-size: 0.95rem; /* Smaller nav links */
+        letter-spacing: 0; /* Remove letter spacing */
+    }
+
+    .robot-3d {
+        right: -40%; /* Move robot further right */
+        scale: 1.0; /* Original scale, or slightly smaller */
+        top: 5%; /* Adjust vertical position if needed */
+    }
+
+    .content {
+        margin-left: 5%;
+        max-width: 35rem;
+    }
+
+    .tag-box {
+        width: 16rem; /* Smaller tag box */
+        height: 2.2rem;
+    }
+    .tag-box .tag {
+        font-size: 0.9rem; /* Smaller tag text */
+    }
+
+    .content h1 {
+        font-size: 3rem;
+        margin: 1.5rem 0; /* Adjust heading margins */
+    }
+
+    .description {
+        font-size: 1rem;
+        max-width: 28rem;
+    }
+
+    .btn-get-started, .btn-signing-main {
+        font-size: 1.1rem; /* Smaller button text */
+        padding: 0.6rem 1rem;
+    }
+    .btn-signing-main {
+        padding: 0.6rem 2rem; /* Keep relative padding for main button */
+    }
+}
+
+/* For small tablets in portrait mode or large mobile phones (e.g., up to 768px wide) */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column; /* Stack logo and nav vertically */
+        align-items: flex-start; /* Align header items to start */
+        padding: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    header h1.logo {
+        margin-bottom: 1rem; /* Space between logo and nav */
+    }
+
+    nav {
+        margin-left: 0; /* Remove negative margin */
+        gap: 1rem;
+        flex-wrap: wrap; /* Allow nav items to wrap */
+        justify-content: flex-start;
+    }
+
+    .robot-3d {
+        position: relative; /* Change to relative position */
+        top: auto;
+        right: auto;
+        left: 50%; /* Center horizontally */
+        transform: translateX(-50%) scale(0.9); /* Center and scale down */
+        margin-top: 3rem; /* Add space above it */
+        width: 100%; /* Take full width for easier centering */
+        height: 300px; /* Give it a fixed height or adjust as needed */
+        order: 1; /* Place it before the content on small screens if desired, or after */
+    }
+
+    main {
+        min-height: auto; /* Remove fixed min-height */
+        padding-top: 2rem; /* Add some top padding */
+        order: 2; /* Place content after robot */
+    }
+    
+    .content {
+        margin-left: 0; /* Remove left margin */
+        max-width: 100%; /* Allow content to take full width */
+        text-align: center; /* Center content text */
+        padding: 0 1rem; /* Add horizontal padding to content */
+    }
+
+    .tag-box {
+        margin: 0 auto; /* Center tag box */
+        width: 14rem;
+        height: 2rem;
+    }
+
+    .content h1 {
+        font-size: 2.5rem;
+        margin: 1.5rem auto;
+        max-width: 90%; /* Prevent heading from being too wide */
+    }
+
+    .description {
+        font-size: 0.9rem;
+        max-width: 90%;
+        margin: 0 auto;
+    }
+
+    .buttons {
+        flex-direction: column; /* Stack buttons vertically */
+        align-items: center; /* Center buttons */
+        margin-top: 2rem;
+        gap: 0.8rem;
+    }
+    .btn-get-started, .btn-signing-main {
+        width: 80%; /* Make buttons take up more width */
+        max-width: 250px; /* But not too wide */
+        text-align: center;
+        padding: 0.8rem 1.2rem;
+        font-size: 1rem;
+    }
+
+    .layer-blur {
+        display: none; /* Hide the blur layer on smaller screens if it interferes */
+    }
+    .image-gradient {
+        opacity: 0.05; /* Make it a bit more visible if desired, or hide it */
+        width: 100%;
+        object-fit: cover;
+        height: 300px; /* Limit height */
+        top: 0;
+        right: 0;
+    }
+}
+
+/* For most mobile phones (e.g., up to 480px wide) */
+@media (max-width: 480px) {
+    header {
+        padding: 0.8rem;
+    }
+    header h1.logo {
+        font-size: 1.5rem;
+        margin-bottom: 0.8rem;
+    }
+    nav a {
+        font-size: 0.85rem;
+        gap: 0.8rem;
+    }
+    .robot-3d {
+        transform: translateX(50px) scale(3); /* Even smaller robot */
+        height: 250px;
+        margin-top: 2rem;
+    }
+    .content h1 {
+        font-size: 2rem;
+    }
+    .description {
+        font-size: 0.85rem;
+    }
+    .btn-get-started, .btn-signing-main {
+        width: 90%;
+        max-width: 200px;
+        font-size: 0.9rem;
+        padding: 0.7rem 1rem;
+    }
+}
+
+/* For very small phones (e.g., up to 320px wide) */
+@media (max-width: 320px) {
+    .content h1 {
+        font-size: 1.8rem;
+    }
+    .description {
+        font-size: 0.8rem;
+    }
+    .tag-box {
+        width: 12rem;
+        height: 1.8rem;
+    }
+    .tag-box .tag {
+        font-size: 0.8rem;
+    }
+    .robot-3d {
+        height: 200px;
+    }
+}
+
+
+/* abaout page */
+
+.about-page{
+    position: relative;
+    overflow: hidden;
+}
+
+ .background-spline {
+  position: absolute;
+  margin-top: 7rem;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+ .about-me{
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 0.3rem;
+  padding-top: 8rem;
+}
+
+.subtitle {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #94a3b8;
+}
+
+/* About Container */
+.about-container {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 0 2rem;
+  flex-wrap: wrap;
+}
+
+/* Cards */
+.card {
+  
+  padding: 2rem;
+  border: 1px solid rgb(197, 191, 191,0.4);
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+  flex: 1;
+  min-width: 320px;
+  max-width: 500px;
+}
+.card:hover{
+ transform: scale(1.007);
+}
+
+
+/* Card Headings */
+.card h2 {
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+.card h3 {
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/* List */
+ul {
+  margin-left: 1.5rem;
+}
+
+ul li {
+  margin-bottom: 0.5rem;
+}
+
+/* Links */
+a {
+  color: #3065b9;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* Resume Button */
+.resume-btn {
+  margin-top: 1.5rem;
+  padding: 0.7rem 1.2rem;
+  background: lightgrey;
+  border: none;
+  border-radius: 8px;
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+.resume-btn:hover {
+  background:#334155;
+  color: white;
+  transform: translateY(-5px);
+  transform: scale(1.1);
+}
+
+/* Skills Section */
+.skills {
+  margin-bottom: 1.2rem;
+}
+
+.skills h4 {
+  margin-bottom: 0.5rem;
+  color: #cbd5e1;
+}
+
+.skills span {
+  display: inline-block;
+  background: #334155;
+  padding: 0.4rem 0.8rem;
+  margin: 0.2rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+}
+
+
+
+/* project page */
+.projects-section-imageless {
+    max-width: 1200px; /* Standard width for three columns */
+    margin: 0 auto;
+    padding-top: 7rem;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2.2em;
+    color: #f5f5f5; /* Changed title color to match the image */
+    margin-bottom: 5px;
+}
+
+.section-subtitle {
+    font-size: 1.1em;
+    color: #aaa;
+    margin-bottom: 40px;
+}
+
+/* --- Projects Grid --- */
+.projects-grid-imageless {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Three columns, responsive */
+    gap: 50px;
+}
+
+/* --- Individual Project Card --- */
+.project-card-imageless {
+    margin-top: 20px;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    text-align: left;
+    transition: transform 0.2s;
+    border: 1px solid rgb(197, 191, 191,0.4);
+
+    /* Flexbox for bottom-aligned link */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.project-card-imageless:hover {
+    transform: translateY(-5px);
+    transform: scale(1.08);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+}
+
+.project-title-imageless {
+    font-size: 1.25em;
+    color: #f5f5f5;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.project-description-imageless {
+    font-size: 0.95em;
+    color: #ccc;
+    line-height: 1.4;
+    margin-bottom: 15px;
+    flex-grow: 1; /* Allows description to take available space */
+}
+
+/* --- Tech Tags --- */
+.tech-tags-container {
+    margin-bottom: 20px;
+}
+
+.tech-tag {
+    display: inline-block;
+    background-color: #334155; /* Darker tag background */
+    color: #e6e7e9; /* Accent color for tag text */
+    font-size: 0.75em;
+    padding: 4px 10px;
+    border-radius:12px;
+    margin-right: 8px;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+/* --- Key Technologies Section --- */
+.key-tech-section {
+    margin-top: auto; /* Pushes this section to use remaining space before the link */
+    margin-bottom: 20px; /* Space before the GitHub link */
+}
+
+.key-tech-heading {
+    font-size: 0.8em;
+    color: #888;
+    margin-top: 0;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.key-tech-icons i {
+    color: #f5f5f5; /* White color for these icons as per inspiration */
+    font-size: 1.3em;
+    margin-right: 15px;
+}
+
+
+/* --- GitHub Link --- */
+.github-link-imageless {
+    display: flex; /* Use flex to align icon and text */
+    align-items: center;
+    justify-content: center; /* Center content within the button */
+    background-color: #1a1a1a; /* Dark background for button */
+    color: #f5f5f5; /* White text for button */
+    text-decoration: none;
+    font-size: 0.9em;
+    font-weight: bold;
+    padding: 12px 15px;
+    border-radius: 8px;
+    margin-top: 15px; /* Space above the button */
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.github-link-imageless i:first-child { /* GitHub icon */
+    margin-right: 10px;
+    font-size: 1.1em;
+}
+
+.github-link-imageless i:last-child { /* Arrow icon */
+    margin-left: 10px;
+    transition: margin-left 0.2s;
+}
+
+.github-link-imageless:hover {
+    background-color:#334155; /* Accent color on hover */
+    color: #fff; /* Dark text on hover */
+}
+
+.github-link-imageless:hover i {
+    color: #fff; /* Dark icons on hover */
+    margin-left: 15px; /* Arrow animation */
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 900px) {
+    .projects-grid-imageless {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Adjust min-width for smaller screens */
+    }
+}
+
+@media (max-width: 600px) {
+    .projects-grid-imageless {
+        grid-template-columns: 1fr; /* Single column on very small screens */
+    }
+    .project-card-imageless {
+        padding: 15px;
+    }
+    .project-title-imageless {
+        font-size: 1.15em;
+    }
+    .project-description-imageless {
+        font-size: 0.9em;
+    }
+}
+
+
+/* experiance page */
+
+.experience-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-top: 7rem;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2.5em;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.section-subtitle {
+    font-size: 1.1em;
+    color: #aaa;
+    margin-bottom: 40px;
+}
+
+/* --- Timeline Container --- */
+.timeline {
+    position: relative;
+    padding: 20px 0;
+    margin-top: 30px;
+    
+}
+
+/* The vertical line */
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    background-color: #565555; /* Darker line color */
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -1px;
+    z-index: 0;
+}
+
+/* --- Timeline Item Styling --- */
+.timeline-item {
+    padding: 10px 40px;
+    position: relative;
+    background-color: inherit;
+    width: 50%;
+    box-sizing: border-box;
+}
+
+/* Container for the content card */
+.timeline-content {
+    padding: 20px;
+    border: 1px solid rgb(197, 191, 191,0.4);
+    border-radius: 8px;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeline-content:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6);
+}
+
+.role {
+    font-size: 1.3em;
+    color: #4CAF50; /* A contrasting color for the role/title */
+    margin-bottom: 5px;
+}
+
+.icon-style {
+    margin-right: 10px;
+    color: #4CAF50;
+}
+
+.details {
+    font-size: 0.9em;
+    color: #b1b0b0;
+    margin-bottom: 15px;
+}
+
+.description {
+    font-size: 1em;
+    line-height: 1.6;
+}
+
+
+/* --- Left Side Styling (Moves to the left of the line) --- */
+.left {
+    left: 0;
+    padding-right: 60px; /* Space for the line and dot */
+}
+
+/* Arrow/Tail for left side */
+.left .timeline-content::after {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    right: -10px; /* Position the arrow */
+    border: medium solid #1e1e1e;
+    border-width: 10px 0 10px 10px;
+    border-color: transparent transparent transparent #1e1e1e;
+}
+
+/* --- Right Side Styling (Moves to the right of the line) --- */
+.right {
+    left: 50%;
+    padding-left: 60px; /* Space for the line and dot */
+}
+
+/* Arrow/Tail for right side */
+.right .timeline-content::after {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    left: -10px; /* Position the arrow */
+    border: medium solid #1e1e1e;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent #1e1e1e transparent transparent;
+}
+
+/* --- Timeline Dot/Marker --- */
+.timeline-item::after {
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    right: -7.5px; /* Center dot on the line */
+    background-color: #d4ced4; /* The bright blue dot color */
+    border: 2px solid #121212; /* Border to match body background */
+    top: 25px;
+    border-radius: 50%;
+    z-index: 10;
+}
+
+.right::after {
+    left: -7.5px; /* Adjust dot position for right items */
+}
+
+/* --- Responsive Layout for smaller screens (mobile) --- */
+@media screen and (max-width: 768px) {
+    /* Make the vertical line on the left */
+    .timeline::after {
+        left: 20px; /* Move line to the left edge (or close to it) */
+    }
+
+    /* All items should take full width and be on the left */
+    .timeline-item {
+        width: 100%;
+        padding-left: 60px; /* Push content away from the line */
+        padding-right: 20px;
+    }
+
+    /* All dots/markers should be on the left */
+    .timeline-item::after {
+        left: 12.5px;
+        right: auto;
+    }
+
+    /* Reset the right positioning for all items */
+    .right {
+        left: 0%;
+        padding-left: 60px;
+    }
+
+    /* Remove the 'left' arrow and reposition the 'right' arrow to the new line position */
+    .left .timeline-content::after,
+    .right .timeline-content::after {
+        border-width: 10px 10px 10px 0; /* Reset to 'right' arrow style */
+        border-color: transparent #1e1e1e transparent transparent;
+        left: -10px; /* Position it to the left of the card */
+        right: auto;
+    }
+}
+
+/* service i offer*/
+.services-page-container {
+    width: 100%;
+    margin-bottom: 8rem;
+    max-width: 1400px; /* Max width for the entire section */
+    overflow: hidden; /* Crucial for clipping the scrolling carousel */
+    box-sizing: border-box; /* Include padding in width calculation */
+    padding: 20px 0; /* Vertical padding */
+}
+
+.header-section {
+    text-align: center;
+    margin-bottom: 40px;
+    padding-top: 50px; /* Space from top of page */
+}
+
+.section-title {
+    font-size: 3.5rem;
+    color: #ffffff;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.section-subtitle {
+    font-size: 1.25rem;
+    color: #a0a0a0;
+    margin-top: 0;
+}
+
+.carousel-wrapper {
+    position: relative;
+    overflow: hidden; /* This will act as the viewport for the carousel */
+    padding: 20px 0; /* Vertical padding around the carousel */
+    width: 100%; /* Take full width of parent */
+}
+
+.cards-track {
+    display: flex;
+    gap: 1.5rem; /* Spacing between cards */
+    transition: transform 0s linear; /* JS handles transform directly */
+    will-change: transform; /* Performance hint */
+
+    /* IMPORTANT: Add horizontal padding to the track itself */
+    /* This ensures cards are never flush with the edge of the screen */
+    padding: 0 50px; /* Adjust this to control visible buffer space */
+    
+    /* Hide potential scrollbars */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+.cards-track::-webkit-scrollbar {
+    display: none;
+}
+
+
+.product-card {
+    flex: 0 0 auto;         /* CRUCIAL: Don't grow, don't shrink, use auto (explicit) width */
+    width: 300px;           /* Default width for each card */
+    min-height: 380px;      /* Ensure consistent height, adjust as needed */
+    box-sizing: border-box; /* Include padding/border in width */
+    
+    border-radius: 18px;
+    border: 1px solid rgba(255,255,255,0.3);
+    background: rgba(255,255,255,0.03);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+    overflow: hidden;       /* Clip content inside card if it overflows */
+    position: relative;     /* For pc-overlay positioning */
+    transition: transform 0.3s ease-in-out; /* For hover effect */
+}
+
+.product-card-inner {
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 1rem;
+    height: 100%; /* Make inner fill card for consistent layout */
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1); /* For hover transform */
+}
+
+.pc-title {
+    font-size: 2rem;
+    color: #e6f7f5;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.pc-desc {
+    margin-top: 0.75rem;
+    color: #a9bcbc;
+    font-size: 1.125rem;
+    line-height: 1.5;
+}
+
+.pc-overlay {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(1200px 400px at 50% 85%, rgba(78,205,196,0.08), transparent 60%),
+                radial-gradient(800px 300px at 50% 100%, rgba(69,183,209,0.08), transparent 60%);
+    opacity: 0;
+    transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    align-items: flex-end;
+    padding: 2.5rem;
+    color: #e8ffff;
+    pointer-events: none; /* Allow interaction with elements behind overlay if needed, or remove for full overlay */
+}
+.pc-overlay p {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.4;
+}
+
+/* Hover effects */
+.product-card:hover {
+    transform: translateY(-10px); /* Lift card slightly */
+    box-shadow: 0 15px 40px rgba(0,0,0,0.5); /* More pronounced shadow */
+}
+.product-card:hover .pc-overlay {
+    opacity: 1;
+}
+
+/* --- Media Queries --- */
+
+@media (max-width: 1200px) {
+    .section-title { font-size: 3rem; }
+    .section-subtitle { font-size: 1.15rem; }
+    .product-card { width: 280px; min-height: 360px;}
+    .product-card-inner { padding: 2rem; }
+    .cards-track { gap: 1.25rem; padding: 0 40px; }
+}
+
+@media (max-width: 992px) {
+    .section-title { font-size: 2.5rem; }
+    .section-subtitle { font-size: 1rem; }
+    .product-card { width: 250px; min-height: 340px;}
+    .product-card-inner { padding: 1.8rem; }
+    .pc-title { font-size: 1.8rem; }
+    .pc-desc { font-size: 1rem; }
+    .cards-track { gap: 1rem; padding: 0 30px; }
+}
+
+@media (max-width: 768px) {
+    .section-title { font-size: 2rem; margin-bottom: 5px;}
+    .section-subtitle { font-size: 0.9rem; }
+    .header-section { margin-bottom: 30px; padding-top: 30px;}
+    .product-card { width: 220px; min-height: 300px;}
+    .product-card-inner { padding: 1.5rem; gap: 0.8rem;}
+    .pc-title { font-size: 1.5rem; }
+    .pc-desc { font-size: 0.9rem; }
+    .pc-overlay { padding: 1.5rem; }
+    .pc-overlay p { font-size: 0.85rem;}
+    .cards-track { gap: 0.8rem; padding: 0 20px; }
+}
+
+@media (max-width: 480px) {
+    .section-title { font-size: 1.8rem; }
+    .section-subtitle { font-size: 0.8rem; }
+    .product-card { 
+        width: 85vw; /* Take more viewport width */
+        max-width: 260px; /* But don't get too wide */
+        min-height: 260px;
+    }
+    .product-card-inner { padding: 1.2rem; gap: 0.6rem;}
+    .pc-title { font-size: 1.3rem; }
+    .pc-desc { font-size: 0.8rem; }
+    .pc-overlay { padding: 1.2rem; }
+    .pc-overlay p { font-size: 0.75rem;}
+    .cards-track { gap: 0.6rem; padding: 0 10px; }
+}
+
+/* Achivement page */
+
+
+.container1{
+    text-align: center;
+}
+
+.carousel-container {
+    width: 100%;
+    max-width: 1200px; /* Limit overall width */
+    overflow: hidden; /* Crucial for hiding cards outside the view */
+    position: relative;
+    padding: 20px 0; /* Some vertical padding */
+}
+
+.carousel-track {
+    margin-top: 4rem;
+    
+    display: flex;
+    /* This will be controlled by JavaScript for the infinite loop,
+       but we set a default for initial display */
+    transition: transform 0s linear; /* Initially no transition for setup */
+}
+
+.card1 {
+    flex: 0 0 auto; /* Prevent cards from shrinking */
+    width: 280px; /* Fixed width for each card */
+    margin: 0 15px; /* Spacing between cards */
+    padding: 20px;
+    margin-bottom: 4rem;
+    
+    background-color: #000000;
+    border: 0.5px solid rgba(255, 255, 255, 0.4);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    color: #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 220px; /* Fixed height for consistency */
+    box-sizing: border-box; /* Include padding in height/width */
+}
+
+.card1:hover{
+    transform: scale(1.06);
+}
+
+.card1 h3 {
+    margin: 0 0 10px;
+    font-size: 1.3em;
+    color: #61dafb; /* Light blue for headings */
+}
+
+.card1 p {
+    font-size: 0.9em;
+    line-height: 1.4;
+    color: #bbbbbb;
+}
+
+/* Keyframe animation for continuous scrolling if using pure CSS animation */
+/*
+@keyframes scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-100%); }
+}
+
+.carousel-track {
+    animation: scroll 30s linear infinite;
+    width: max-content; 
+}
+*/
+/* media query */
+
+/* For screens smaller than 1024px (e.g., tablets in landscape) */
+@media (max-width: 1024px) {
+    .card {
+        width: 250px; /* Slightly smaller cards */
+        margin: 0 12px;
+        padding: 18px;
+        height: 210px; /* Adjust height if needed */
+    }
+
+    .card h3 {
+        font-size: 1.2em;
+    }
+
+    .card p {
+        font-size: 0.85em;
+    }
+}
+
+/* For screens smaller than 768px (e.g., tablets in portrait, large phones) */
+@media (max-width: 768px) {
+    .card {
+        width: 220px; /* Even smaller cards */
+        margin: 0 10px;
+        padding: 15px;
+        height: 200px; /* Adjust height */
+    }
+
+    .card img {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 10px;
+    }
+
+    .card h3 {
+        font-size: 1.1em;
+    }
+
+    .card p {
+        font-size: 0.8em;
+    }
+
+    .carousel-container {
+        padding: 15px 0;
+    }
+}
+
+/* For screens smaller than 480px (e.g., most mobile phones) */
+@media (max-width: 480px) {
+    .card {
+        width: 85vw; /* Make cards take up a larger percentage of viewport width */
+        max-width: 280px; /* But don't let them get too wide on very small screens */
+        margin: 0 8px;
+        padding: 12px;
+        height: auto; /* Let height adjust to content on very small screens */
+        min-height: 180px; /* Ensure a minimum height */
+    }
+
+    .card img {
+        width: 45px;
+        height: 45px;
+        margin-bottom: 8px;
+    }
+
+    .card h3 {
+        font-size: 1em;
+    }
+
+    .card p {
+        font-size: 0.75em;
+    }
+
+    .carousel-container {
+        padding: 10px 0;
+    }
+}
+
+
+
+
+
+
+
+/*  footer page*/
+
+
+footer {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+}
+.image-gradient1{
+    position: absolute;
+    top: 0;
+    right: 0;
+    opacity: 1;
+    z-index: 2;
+}
+
+/* --- Contact Section (The main dark block) --- */
+
+.contact-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.heading {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.sub-heading {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+}
+
+/* --- Contact Information & Follow Me Blocks --- */
+
+.contact-info, .follow-me {
+    background-color: var(--section-bg);
+    border: 0.5px solid rgba(255, 255, 255, 0.5);
+    max-width: 450px;
+    margin: 0 auto 40px auto;
+    padding: 30px;
+    border-radius: 8px;
+    text-align: left;
+}
+
+.contact-info h3, .follow-me h3 {
+    font-size: 1.25rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    color: var(--text-muted);
+    font-size: 1rem;
+}
+
+.info-item i {
+    color: var(--highlight-color); /* Icons in the info list are a nice accent */
+    margin-right: 15px;
+    font-size: 1.2rem;
+    width: 20px; /* Ensures alignment */
+}
+
+/* --- Social Icons --- */
+
+.social-icons {
+    display: flex;
+    gap: 20px;
+}
+
+.social-icons a {
+    color: var(--text-light);
+    padding: 5px;
+    font-size: 1.5rem;
+    
+    border: 0.5px solid rgba(255, 255, 255, 0.5);
+    border-radius: 7px;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    /* background:linear-gradient(to right,#656565,#7f42a7,#6600c5,#5500a0,#757575,#656565); */
+    color: var(--neon-blue);
+}
+
+/* --- Resume Button --- */
+
+.resume-button-container {
+    
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    width: 18rem;
+    height: 2.5rem;
+    border-radius: 50px;
+    background: linear-gradient(to right,#656565,#7f42a7,#6600c5,#5500a0,#757575,#656565);
+    background-size: 200%;
+    animation: anmationGradient 2.5s linear infinite;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+}
+
+.resume-button {
+    position: absolute;
+    inset: 3px 3px 3px 3px;
+    background-color: black;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    color: lightgray;
+    justify-content: center;
+    transition: 0.5s ease;
+}
+
+
+.resume-button:hover {
+    text-decoration: none;
+    color: #5300a0;
+    transform: scale(1.05);
+}
+
+/* --- Copyright Bar (The bottom stripe) --- */
+
+.copyright-bar {
+    background-color: #111827; /* Darker than the section above */
+    padding: 20px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+}
+
+.build-info {
+    order: 2; /* Middle position on wide screens */
+    margin: 10px 0;
+}
+
+.copyright-text {
+    order: 3; /* Right position on wide screens */
+    margin: 10px 0;
+}
+
+.social-icons-footer {
+    display: flex;
+    gap: 15px;
+    order: 1; /* Left position on wide screens */
+}
+
+.social-icons-footer a {
+    color: var(--text-muted);
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+.social-icons-footer a:hover {
+    color: var(--highlight-color);
+}
+
+.heart {
+    color: #ef4444; /* Red heart color */
+}
+
+/* --- Responsive Adjustments for Small Screens --- */
+
+@media (max-width: 768px) {
+    .contact-section {
+        padding: 40px 15px;
+    }
+
+    .heading {
+        font-size: 2rem;
+    }
+
+    .copyright-bar {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .social-icons-footer, .build-info, .copyright-text {
+        order: initial; /* Reset order for stacking */
+        margin: 5px 0;
+    }
+}
