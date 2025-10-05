@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     let scrollPosition = 0;
-    const scrollSpeed = 1.2; // Pixels per frame (lower = slower)
+    const scrollSpeed = 3; // Pixels per frame (lower = slower)
     let animationFrameId;
 
     function animateScroll() {
@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
     let scrollPosition = 0;
-    const scrollSpeed = 1.5; // Adjust this value for faster/slower scroll
+    const scrollSpeed = 3; // Adjust this value for faster/slower scroll
     let animationFrameId;
 
     // Calculate the total width of *one complete cycle* of original cards (reset point)
@@ -203,7 +203,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Adjust scrollSpeed:
     // A smaller value can appear smoother by making movement less "chunky" per frame.
     // A slightly larger value might be needed if your FPS is very high and it looks too slow.
-    const scrollSpeed = 0.7; // Try 0.5, 0.7, 1.0, 1.2 to see what's smoothest
+    const scrollSpeed = 2; // Try 0.5, 0.7, 1.0, 1.2 to see what's smoothest
     let animationFrameId;
 
     function animateScroll() {
